@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contour_reg"
+version = "1.0.0"
+description = "Contour-based 2D-3D registration toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Baptiste Brument" }]
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "scikit-learn>=1.0",
+    "trimesh>=3.20",
+    "opencv-python>=4.5",
+    "joblib>=1.1",
+    "matplotlib>=3.4",
+]
+
+[project.optional-dependencies]
+segmentation = ["transformers>=5.2", "huggingface_hub", "torch", "torchvision", "pillow"]
+
+[dependency-groups]
+dev = ["pytest>=7", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/martine-benchmark/contour-registration"
+Paper = "https://martine-benchmark.github.io/"
+
+[project.scripts]
+contour-reg = "contour_reg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

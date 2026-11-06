@@ -1,0 +1,81 @@
+# ─────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.manifest
+*.spec
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ─────────────────────────────────────────────────────────────
+# Virtual environments
+# ─────────────────────────────────────────────────────────────
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# ─────────────────────────────────────────────────────────────
+# Editors / IDE / OS
+# ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.spyderproject
+.spyproject
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# ─────────────────────────────────────────────────────────────
+# Generated outputs & runtime artifacts
+# ─────────────────────────────────────────────────────────────
+results/
+outputs/
+output/
+synthetic_output/
+validation_results/
+study*/
+slurm_logs/
+*.log
+*.tmp
+*.bak
+*.lock
+!uv.lock
+.generating.lock
+.complete
+
+# ─────────────────────────────────────────────────────────────
+# Heavy data & binary artifacts (never in git)
+# ─────────────────────────────────────────────────────────────
+*.ply
+*.obj
+*.stl
+*.exr
+*.npy
+*.npz
+*.pdf
+
+# ─────────────────────────────────────────────────────────────
+# …BUT keep lightweight committed test fixtures and README assets
+# ─────────────────────────────────────────────────────────────
+!tests/data/
+!tests/data/**
+!docs/assets/
+!docs/assets/**
+docs/assets/_sweep_tmp/
